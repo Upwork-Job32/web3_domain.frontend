@@ -1,0 +1,5 @@
+export { default as WalletStatus } from './WalletStatus'
+export { default as RegistrationForm } from './RegistrationForm'
+export { default as TransactionHistory } from './TransactionHistory'
+export { default as WalletConnector } from './WalletConnector'
+export * from './RegistrationService'

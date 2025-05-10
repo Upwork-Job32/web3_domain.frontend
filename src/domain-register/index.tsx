@@ -1,0 +1,5 @@
+export { default as DomainRegister } from './DomainRegister'
+export { default as BillingAndInfo } from './BillingAndInfo'
+export { default as DomainSearchResults } from './DomainSearchResults'
+export { default as LogoHeader } from '../components/common/LogoHeader'
+export { default as RegistrationForm } from '../components/RegistrationForm'
