@@ -24,7 +24,7 @@ const RegistrationComplete: React.FC = () => {
         </p>
 
         <a
-          href="https://app.pkt.cash/dashboard"
+          href="https://app.pkt.cash/pktdnspage"
           rel="noopener noreferrer"
           className="rounded-full text-sm sm:text-base transition-all duration-300 text-white sm:w-[200px] w-[100%] h-[45px] align-middle text-center p-[10px] bg-[#0D4AE7] shadow-[0_0_20px_rgba(45,128,255,0.15)]"
         >
