@@ -40,24 +40,40 @@ const DomainRegistration: React.FC = () => {
   }, [state])
 
   const handleFormSubmit = (data: FormData) => {
-    setFormData(data)
+    const { name, email, phone, domainName, custody, walletAddress } = data
 
-    const { name, email, domainName, custody, walletAddress } = data
-    const custodyLabel = custody === 'self' ? 'Self Custody' : 'Hosted Custody'
+    const form = document.createElement('form')
+    form.method = 'POST'
+    form.action = 'https://pktpal.com/cart/add'
+    form.style.display = 'none'
 
-    const redirectUrl = `https://pktpal.com/cart/add/50393018106131?&properties[Name]=${encodeURIComponent(
-      name
-    )}&properties[Email]=${encodeURIComponent(
-      email
-    )}&properties[Domain]=${encodeURIComponent(
-      domainName
-    )}&properties[Custody]=${encodeURIComponent(custodyLabel)}${
-      walletAddress
-        ? `&properties[WalletAddress]=${encodeURIComponent(walletAddress)}`
-        : ''
-    }`
+    const appendInput = (name: string, value: string) => {
+      const input = document.createElement('input')
+      input.type = 'hidden'
+      input.name = name
+      input.value = value
+      form.appendChild(input)
+    }
 
-    window.location.href = redirectUrl
+    appendInput('items[0][id]', '50393018106131')
+    appendInput('items[0][quantity]', '1')
+    appendInput('items[0][properties][name]', name)
+    appendInput('items[0][properties][email]', email)
+    appendInput('items[0][properties][number]', phone)
+    appendInput('items[0][properties][domain]', domainName)
+    appendInput('items[0][properties][custody]', custody)
+
+    if (walletAddress) {
+      appendInput('items[0][properties][walletAddress]', walletAddress)
+    }
+
+    if (custody === 'hosted') {
+      appendInput('items[1][id]', '50421796274451')
+      appendInput('items[1][quantity]', '1')
+    }
+
+    document.body.appendChild(form)
+    form.submit()
   }
 
   return (
