@@ -168,7 +168,12 @@ const WalletStatus: React.FC<WalletStatusProps> = ({
               Desktop wallet browser extension is required
             </div>
           </div>
-          <button className="w-[50%] bg-[#0D4AE7] text-white rounded-full py-3 flex items-center justify-center space-x-2">
+          <button
+            onClick={() =>
+              window.open('https://discord.gg/9qgtGgx2Ku', '_blank')
+            }
+            className="w-[50%] bg-[#0D4AE7] text-white rounded-full py-3 flex items-center justify-center space-x-2"
+          >
             <span>Need help?</span>
             <span className="w-5 h-5 rounded-full bg-transparent border border-white/20 flex items-center justify-center text-xs">
               ?
