@@ -15,9 +15,7 @@ export type TransactionHistoryItem = {
   stakeId?: string
 }
 
-/**
- * Type definition for the wallet history array
- */
+
 export type WalletHistoryType = TransactionHistoryItem[]
 
 /**
