@@ -7,13 +7,11 @@ const RegistrationComplete: React.FC = () => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-opacity-90">
-      {/* Background shapes */}
       <div
         className="bg-cover bg-center h-full w-full absolute z-[-1]"
         style={{ backgroundImage: `url(${bg})` }}
       />
 
-      {/* Main content */}
       <div className="bg-white/10 px-[64px] py-[48px] rounded-[20px] bg-cover p-8 w-[90%] max-w-[780px] text-center relative z-10 gap-y-[48px] flex flex-col items-center justify-center  ">
         <h1 className="md:text-[64px] text-[48px] mb-4 text-white">
           Registration <span className="text-[#3B82F6]">complete</span>
