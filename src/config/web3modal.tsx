@@ -24,7 +24,6 @@ export const wagmiConfig = defaultWagmiConfig({
   enableEIP6963: true
 })
 
-// 3. Create modal
 createWeb3Modal({
   wagmiConfig: wagmiConfig,
   projectId,
